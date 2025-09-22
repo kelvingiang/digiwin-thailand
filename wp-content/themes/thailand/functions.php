@@ -1,7 +1,36 @@
 <?php
+date_default_timezone_set('Asia/Ho_Chi_Minh');
+
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
+if (!isset($_SESSION['languages'])) {
+    $_SESSION['languages'] = 'cn';
+}
+
+// @ini_set( 'upload_max_size' , '64M' );
+// @ini_set( 'post_max_size', '64M');
+// @ini_set( 'max_execution_time', '300' );
+
+define('THEME_URL', get_stylesheet_directory());  // hang lay path thu muc theme
+define('THEME_PART', get_stylesheet_directory_uri());
+define('DS', DIRECTORY_SEPARATOR);  // phan nay thay doi dau / theo he dieu hanh khac nhau giua window va linx
+define('DIR_HELPER', THEME_URL . DS . 'helper' . DS);
+
+require_once(DIR_HELPER . 'define.php');
+require_once(DIR_HELPER . 'style.php');
+require_once(DIR_HELPER . 'function.php');
+require_once(DIR_HELPER . 'require.php');
+
+require_once(DIR_CLASSES . 'class_rewrite.php');
+new Class_Rewrite_Url();
 
 
 
+//===================================================================================================================================
+//************************************************************************************************** */
+//===================================================================================================================================
 // function of blank template
 add_action('after_setup_theme', 'blankslate_setup');
 function blankslate_setup()
@@ -20,6 +49,7 @@ function blankslate_setup()
     }
     register_nav_menus(array('main-menu' => esc_html__('Main Menu', 'blankslate')));
 }
+
 add_action('admin_notices', 'blankslate_notice');
 function blankslate_notice()
 {
@@ -29,6 +59,7 @@ function blankslate_notice()
     if (!get_user_meta($user_id, 'blankslate_notice_dismissed_12') && current_user_can('manage_options'))
         echo '<div class="notice notice-info"><p><a href="' . esc_url($admin_url), esc_html($param) . 'dismiss" class="alignright" style="text-decoration:none"><big>' . esc_html__('Ⓧ', 'blankslate') . '</big></a>' . wp_kses_post(__('<big><strong>🏆 Thank you for using BlankSlate!</strong></big>', 'blankslate')) . '<p>' . esc_html__('Powering over 10k websites! Buy me a sandwich! 🥪', 'blankslate') . '</p><a href="https://github.com/webguyio/blankslate/issues/57" class="button-primary" target="_blank"><strong>' . esc_html__('How do you use BlankSlate?', 'blankslate') . '</strong></a> <a href="https://opencollective.com/blankslate" class="button-primary" style="background-color:green;border-color:green" target="_blank"><strong>' . esc_html__('Donate', 'blankslate') . '</strong></a> <a href="https://wordpress.org/support/theme/blankslate/reviews/#new-post" class="button-primary" style="background-color:purple;border-color:purple" target="_blank"><strong>' . esc_html__('Review', 'blankslate') . '</strong></a> <a href="https://github.com/webguyio/blankslate/issues" class="button-primary" style="background-color:orange;border-color:orange" target="_blank"><strong>' . esc_html__('Support', 'blankslate') . '</strong></a></p></div>';
 }
+
 add_action('admin_init', 'blankslate_notice_dismissed');
 function blankslate_notice_dismissed()
 {
@@ -36,12 +67,14 @@ function blankslate_notice_dismissed()
     if (isset($_GET['dismiss']))
         add_user_meta($user_id, 'blankslate_notice_dismissed_12', 'true', true);
 }
+
 add_action('wp_enqueue_scripts', 'blankslate_enqueue');
 function blankslate_enqueue()
 {
     wp_enqueue_style('blankslate-style', get_stylesheet_uri());
     wp_enqueue_script('jquery');
 }
+
 add_action('wp_footer', 'blankslate_footer');
 function blankslate_footer()
 {

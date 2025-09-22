@@ -1,0 +1,88 @@
+.row-one-column {
+    margin: 0.8rem 0;
+    width: 100%;
+}
+
+.row-two-column {
+    display: flex;
+    flex-direction: row;
+    margin: 0.8rem 0;
+    .col {
+        width: 49.3%;
+    }
+}
+
+.row-three-column {
+    display: flex;
+    flex-direction: row;
+    margin: 0.8rem 0;
+    .col {
+        width: 32.6%;
+    }
+}
+
+.row-four-column {
+    display: flex;
+    flex-direction: row;
+    margin: 0.8rem 0;
+    .col {
+        width: 24.4%;
+    }
+}
+
+.row-five-column {
+    display: flex;
+    flex-direction: row;
+    margin: 0.8rem 0;
+    .col {
+        width: 19.5%;
+    }
+}
+
+.row-six-column {
+    display: flex;
+    flex-direction: row;
+    margin: 0.8rem 0;
+    .col {
+        width: 16.2%;
+    }
+}
+
+.row-page-title{
+    height: 50px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #003b6e;
+    line-height: 2;
+
+}
+
+.row-title-group{
+    font-size: 1rem;
+    font-weight: bold;
+    color: #31526e;
+    height: 10px;
+}
+
+.row-btn {
+    display: flex;
+    justify-content: flex-end;
+    width: 95.5%;
+    margin: 2rem 1rem;
+}
+
+.cell-title {
+    width: 100%;
+    font-weight: bold;
+    font-size: 1rem;
+    color: #696969;
+    margin-left: 3px;
+}
+
+.cell-text {
+    .my-input {
+        height: 1.5rem;
+        width: 97%;
+        border-radius: 0.3rem;
+    }
+}

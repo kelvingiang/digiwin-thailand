@@ -1,0 +1,339 @@
+.wp-list-table {
+  background-color: #dbdbdb !important;
+}
+.wp-list-table thead tr th, .wp-list-table thead tr td, .wp-list-table tfoot tr th, .wp-list-table tfoot tr td {
+  border: 0;
+  font-weight: bold;
+  color: #6d6d6d;
+}
+.wp-list-table tbody tr:nth-child(even) {
+  background-color: #eeeeee;
+}
+
+.column-cb {
+  width: 2% !important;
+}
+
+.column-posts {
+  width: 90px !important;
+}
+
+.column-title {
+  width: 50%;
+}
+
+.column-setorder {
+  width: 8%;
+}
+
+.column-langguage {
+  width: 8%;
+}
+
+.column-category {
+  width: 8%;
+}
+
+.column-home {
+  width: 8%;
+}
+
+.column-img {
+  width: 300px;
+}
+.column-img img {
+  width: 50px !important;
+  margin: 2px;
+}
+
+.column-img-slider {
+  width: 300px;
+}
+.column-img-slider img {
+  width: 150px !important;
+  margin: 2px;
+}
+
+.column-link {
+  width: 500px;
+}
+
+.column-status {
+  width: 70px;
+}
+
+.column-create_date {
+  width: 80px;
+  float: right;
+}
+
+.without-img {
+  width: 300px;
+  background-color: #e7e3e3;
+  padding: 2rem 0rem;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: rgba(139, 139, 139, 0.7529411765);
+}
+
+.img-thumb {
+  width: 300px;
+}
+
+.show-home {
+  background-color: #195700;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 1rem;
+}
+
+.un-show-home {
+  background-color: #b6b5b5;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+}
+
+.activeStyle {
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+  background-color: #ce3d04;
+  margin-top: 10px;
+}
+
+.row-one-column {
+  margin: 0.8rem 0;
+  width: 100%;
+}
+
+.row-two-column {
+  display: flex;
+  flex-direction: row;
+  margin: 0.8rem 0;
+}
+.row-two-column .col {
+  width: 49.3%;
+}
+
+.row-three-column {
+  display: flex;
+  flex-direction: row;
+  margin: 0.8rem 0;
+}
+.row-three-column .col {
+  width: 32.6%;
+}
+
+.row-four-column {
+  display: flex;
+  flex-direction: row;
+  margin: 0.8rem 0;
+}
+.row-four-column .col {
+  width: 24.4%;
+}
+
+.row-five-column {
+  display: flex;
+  flex-direction: row;
+  margin: 0.8rem 0;
+}
+.row-five-column .col {
+  width: 19.5%;
+}
+
+.row-six-column {
+  display: flex;
+  flex-direction: row;
+  margin: 0.8rem 0;
+}
+.row-six-column .col {
+  width: 16.2%;
+}
+
+.row-page-title {
+  height: 50px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #003b6e;
+  line-height: 2;
+}
+
+.row-title-group {
+  font-size: 1rem;
+  font-weight: bold;
+  color: #31526e;
+  height: 10px;
+}
+
+.row-btn {
+  display: flex;
+  justify-content: flex-end;
+  width: 95.5%;
+  margin: 2rem 1rem;
+}
+
+.cell-title {
+  width: 100%;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #696969;
+  margin-left: 3px;
+}
+
+.cell-text .my-input {
+  height: 1.5rem;
+  width: 97%;
+  border-radius: 0.3rem;
+}
+
+.btn-delete {
+  background-color: #9c6565 !important;
+  color: white !important;
+  border-radius: 0.2rem !important;
+  margin-top: 1.3rem !important;
+  border: 0rem !important;
+}
+.btn-delete:hover {
+  background-color: #890707 !important;
+}
+
+.active_style {
+  width: 20rem;
+  height: 20rem;
+  background-color: green;
+  border-radius: 30rem;
+  margin: 25rem;
+}
+
+ul#detail_list {
+  width: 90%;
+}
+ul#detail_list li.detail_list_title {
+  font-size: 1rem;
+  font-weight: bold;
+}
+ul#detail_list li {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  display: flex;
+  flex-direction: row;
+}
+ul#detail_list li:hover {
+  background-color: #ccc !important;
+}
+ul#detail_list li:nth-child(even) {
+  background-color: #e8e7e7;
+}
+ul#detail_list li:nth-child(1) {
+  height: 50px;
+  background-color: blue !important;
+  padding-top: 0rem;
+  padding-bottom: 0rem;
+}
+ul#detail_list li:nth-child(1) div {
+  color: white;
+  text-align: center;
+  border-right: 1px solid #ccc;
+  padding-top: 1rem;
+}
+ul#detail_list li div {
+  text-align: left;
+  color: #333;
+  width: 10%;
+  padding-left: 10px;
+}
+
+.main-title {
+  margin-bottom: 2rem;
+  border-bottom: 0.2rem #1d3757 solid;
+}
+.main-title h2 {
+  font-size: 1.5rem;
+  color: #1d3757;
+  letter-spacing: 0.3rem;
+}
+
+.cate-space {
+  display: flex;
+  width: 100%;
+}
+.cate-space .cate-form {
+  width: 40%;
+  background-color: #fff;
+  border-radius: 5px;
+  margin: 1.5rem;
+  padding: 1rem 0;
+}
+.cate-space .cate-view {
+  width: 80%;
+}
+.cate-space .cate-view .cate-list {
+  margin-right: 10px;
+  background-color: #e9e9e9;
+}
+.cate-space .cate-view .cate-list .cate-title {
+  background-color: #1e81a2;
+  border-radius: 5px 5px 0px 0px;
+}
+.cate-space .cate-view .cate-list .cate-title div {
+  border-right: 1px #ccc solid;
+  text-align: center;
+}
+.cate-space .cate-view .cate-list .cate-row {
+  border-bottom: 0.1rem #ccc solid;
+  display: flex;
+  flex-direction: row;
+}
+.cate-space .cate-view .cate-list .cate-row h3 {
+  color: #fff;
+}
+.cate-space .cate-view .cate-list .cate-row div {
+  padding: 0.5rem;
+}
+.cate-space .cate-view .cate-list .cate-row div a {
+  text-decoration: none;
+  font-weight: bold;
+  opacity: 0.8;
+}
+.cate-space .cate-view .cate-list .cate-row div a:hover {
+  opacity: 1;
+}
+.cate-space .cate-view .cate-list .cate-row div .del-style {
+  color: red;
+  cursor: pointer;
+}
+.cate-space .cate-view .cate-list .cate-row div:nth-child(1),
+.cate-space .cate-view .cate-list .cate-row div:nth-child(4) {
+  width: 15%;
+  text-align: center;
+}
+.cate-space .cate-view .cate-list .cate-row div:nth-child(2) {
+  width: 40%;
+}
+.cate-space .cate-view .cate-list .cate-row div:nth-child(3) {
+  width: 40%;
+}
+.cate-space .cate-view .cate-list .cate-row div:nth-child(5) {
+  width: 10%;
+  text-align: center;
+  text-align: center;
+}
+
+.update-nag, #wpfooter {
+  display: none;
+}
+
+.radio-space {
+  display: flex;
+}
+.radio-space div {
+  margin: 1rem;
+  width: 5rem;
+}
+.radio-space div label {
+  font-weight: bold;
+}

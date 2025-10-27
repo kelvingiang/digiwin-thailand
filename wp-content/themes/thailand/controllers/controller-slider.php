@@ -43,7 +43,7 @@ class Controller_Slider
             'has_archive' => true,
             'hierarchical' => false,
             'menu_position' => 8,
-            'supports' => array('title', 'thumbnail'),
+            'supports' => array('title', 'thumbnail', 'editor'),
         );
         register_post_type('slider', $args);
     }

@@ -115,6 +115,20 @@
             </div>
         </div>
     </div>
+
+    <div class="row-one-column">
+        <div class="col">
+            <div class="cell-title">公司簡介</div>
+            <div class="cell-text">
+                <?php wp_editor(
+                    get_post_meta('1', '_about_us', true),
+                    'txt-about-us',
+                    array('wpautop' => TRUE, 'editor_height' => '300px')
+                ); ?>
+            </div>
+        </div>
+    </div>
+
     <hr>
 
     <div class="row-two-column">

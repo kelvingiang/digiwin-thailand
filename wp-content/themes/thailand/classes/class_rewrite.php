@@ -13,9 +13,9 @@ class Class_Rewrite_Url
     public function add_rule_rewrite()
     {
 
-        // $regex1 = '([^/]*)/activitie/?([^/]*)/?';
-        // $redirect1 = 'index.php?pagename=$matches[1]&activitie=$matches[2]';
-        // add_rewrite_rule($regex1, $redirect1, 'top');
+        $regex1 = '([^/]*)/cate/?([^/]*)/?';
+        $redirect1 = 'index.php?pagename=$matches[1]&cate=$matches[2]';
+        add_rewrite_rule($regex1, $redirect1, 'top');
 
         ////            http://localhost/maythoikhi/?article=auto-draft-6&paged=3
         $regex2 = '([^/]*)/sp/?([^/]*)/?';

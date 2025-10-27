@@ -1,0 +1,13 @@
+a{
+    text-decoration: none;
+}
+.my-link{
+    color: $colorLink;
+    &:hover{
+        color: $colorHover;
+    }
+}
+
+body{
+    font-family: 'Times New Roman', Times, serif !important;
+}

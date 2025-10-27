@@ -1,5 +1,8 @@
 <?php
     require_once DIR_CODE . 'function-add-action.php';
+    require_once DIR_CODE . 'function-register-menu.php';
+    require_once DIR_CODE . 'function-ajax-load-more.php';
+    require_once DIR_CODE . 'function-ajax-send-form.php';
     // require_once DIR_HELPER . 'code/function-front-custom-post.php';
     // require_once DIR_HELPER . 'code/function-front-menu-side.php';
     // require_once DIR_HELPER . 'code/function-front-menu-sub.php';
@@ -13,6 +16,15 @@
 /* ==============================================================
   CHECK THE ARRAY IS NULL
   =============================================================== */
+// dung để hiển thi khung chọn hình trong bài đăng
+add_theme_support('post-thumbnails');
+
+// thay doi cach hien thi morelink 
+function custom_read_more_link() {
+    return '<a class="more-link" href="' . get_permalink() . '">閱讀更多</a>';
+}
+add_filter('the_content_more_link', 'custom_read_more_link');
+
 
 function MenuMain($arr, $class = "menu-main-item", $item_link = 'menu-main-item-link', $item_bg = 'menu-main-item-bg', $hassub = 'has-sub')
 {

@@ -12,7 +12,7 @@ add_filter('redirect_post_location', function ($location, $post_id) {
         || $post_type === 'industry'
         || $post_type === 'slider'
         || $post_type === 'customerlogo'
-        
+
     ) {
         return admin_url("edit.php?post_type={$post_type}");
     }
@@ -130,3 +130,4 @@ function change_translate_text($translated)
     }
     return $translated;
 }
+

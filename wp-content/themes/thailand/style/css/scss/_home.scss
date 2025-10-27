@@ -1,0 +1,346 @@
+#home-about-us {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* 三欄 */
+    gap: 20px; /* 每個 item 之間的間距 */
+    margin: 1rem;
+    @include Respond(sm) {
+        margin: 0rem;
+        grid-template-columns: repeat(1, 1fr); /* 三欄 */
+        gap: 0px; /* 每個 item 之間的間距 */
+    }
+    .clip {
+        display: flex;
+        justify-content: center;
+        iframe {
+            width: 80%;
+            height: 300px;
+            @include Respond(sm) {
+                width: 100%;
+            }
+            @include Respond(md){
+                width: 100%;
+            }
+        }
+    }
+    .about-us {
+        h2 {
+            font-size: 3rem;
+            color: red;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            @include Respond(sm) {
+                font-size: 2rem;
+            }
+        }
+        line-height: 1.5;
+        font-size: 1.2rem;
+        @include Respond(sm) {
+            padding: 1rem;
+        }
+    }
+}
+
+#home-industries {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 三欄 */
+    gap: 20px; /* 每個 item 之間的間距 */
+    background-color: #ececec;
+    padding: 2rem 0;
+    padding-top: 50px;
+    position: relative;
+    @include Respond(sm) {
+        grid-template-columns: repeat(1, 1fr); /* 三欄 */
+        gap: 50px; /* 每個 item 之間的間距 */
+    }
+    .item-title {
+        height: 50px;
+        position: absolute;
+        top: 0;
+        background-color: #ececec;
+        width: 100%;
+        text-align: left;
+        font-size: 2rem;
+        font-weight: bold;
+        @include text-style-with-shadow; // Gọi mixin để áp dụng màu và bóng
+        padding-top: 8px;
+        padding-left: 2rem;
+    }
+    .item {
+        display: flex;
+        justify-content: center; /* 水平置中 */
+        align-items: center; /* 垂直置中 */
+        min-height: 300px; /* 給它一個高度才看得到置中效果 */
+
+        .img-style {
+            position: relative;
+            background-color: bisque;
+            width: 70%;
+            aspect-ratio: 1 / 1; /* 維持正圓形 */
+            border-radius: 50%;
+            overflow: hidden;
+            margin: auto auto;
+            border: 1px solid #ececec;
+            box-shadow: 1px 3px 10px #666;
+            transition: all 1s;
+            -moz-transition: all 1s;
+            -webkit-transition: all 1s;
+            -o-transition: all 1s;
+            @include Respond('md'){
+                width: 85%;
+            }
+
+            &:hover {
+                border: 1px solid transparent;
+                box-shadow: 0px 0px 0px #ffffff;
+                img {
+                    transform: scale(1.1);
+                    filter: grayscale(1);
+                }
+                .text-style {
+                    color: #ffffff;
+                    -webkit-text-stroke: 1px #ffffff;
+                    text-shadow: 1px 2px 5px rgba(165, 165, 165, 0.521); /* 柔和陰影 */
+                }
+            }
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover; /* 保持比例填滿圓形 */
+                transition: all 2s;
+                -moz-transition: all 2s;
+                -webkit-transition: all 2s;
+                -o-transition: all 2s;
+            }
+            .text-style {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%); /* 讓中心對齊 */
+                font-size: 3rem;
+                font-weight: bold;
+                color: transparent;
+                -webkit-text-stroke: 1px rgb(73, 73, 73);
+                text-shadow: 1px 2px 2px rgba(165, 165, 165, 0.521); /* 柔和陰影 */
+                text-align: center;
+                z-index: 10;
+                transition: all 1s;
+                -moz-transition: all 1s;
+                -webkit-transition: all 1s;
+                -o-transition: all 1s;
+                @include Respond('md'){
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+}
+
+#home-products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 三欄 */
+    gap: 0px; /* 每個 item 之間的間距 */
+    background-color: $colorMain;
+    padding-top: 50px;
+    position: relative;
+    @include Respond(sm) {
+        grid-template-columns: repeat(1, 1fr); /* 三欄 */
+        gap: 0px;
+    }
+    .item-title {
+        height: 50px;
+        position: absolute;
+        top: 0;
+        background-color: #ffffff;
+        width: 100%;
+        text-align: left;
+        font-size: 2rem;
+        font-weight: bold;
+        @include text-style-with-shadow; // Gọi mixin để áp dụng màu và bóng
+        padding-top: 8px;
+        padding-left: 2rem;
+    }
+    .item {
+        padding: 1rem 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; /* 水平置中 */
+        align-items: center; /* 垂直置中 */
+        min-height: 300px; /* 給它一個高度才看得到置中效果 */
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        @include Respond(sm) {
+            border-bottom: 1px solid #fff;
+        }
+        &:hover {
+            .pro-name {
+                top: 0%;
+            }
+        }
+        img {
+            width: 80%;
+            margin-top: 1rem;
+        }
+        .pro-title {
+            margin-top: 1rem;
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .pro-name {
+            position: absolute;
+            top: -100%;
+            height: 100%;
+            width: 100%;
+            background-color: #ffffffee;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            font-weight: bold;
+            color: $colorMain;
+            transition: all 1s;
+            -moz-transition: all 1s;
+            -webkit-transition: all 1s;
+            -o-transition: all 1s;
+            a {
+                display: block;
+                width: 100%;
+                height: 100%;
+                text-align: center;
+                padding-top: 35%;
+            }
+        }
+    }
+}
+
+#home-news {
+    padding-top: 2rem;
+    #news-home {
+        .news-home-title {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                width: 20%;
+                cursor: pointer;
+                padding: 1rem 0.3rem;
+                color: rgb(136, 136, 136);
+                //  border-bottom: 2px solid #000;
+                border-radius: 5px 5px 0 0;
+                &:hover h3 {
+                    transition: all 1s;
+                    color: rgb(2, 58, 110);
+                }
+                @include Respond(md) {
+                    padding: 0.5rem 0.1rem;
+                }
+                h3 {
+                    font-weight: bold;
+                    font-size: 1.3rem;
+                    @include Respond(lg) {
+                        font-size: 1.2rem;
+                    }
+                    @include Respond(md) {
+                        font-size: 1rem;
+                    }
+                    @include Respond(sm) {
+                        font-size: 0.8rem;
+                    }
+                }
+            }
+            .title-select {
+                color: rgb(2, 58, 110);
+                background-color: rgb(238, 238, 238);
+                border-top: 1px solid #235a74;
+                border-left: 1px solid #235a74;
+                border-right: 1px solid #235a74;
+                @include Respond(md) {
+                    padding: 0.5rem 0rem;
+                }
+                h3 {
+                    font-weight: bold;
+                }
+            }
+        }
+        .news-home-content {
+            & > div {
+                display: none;
+                border-top: 1px solid #235a74;
+                margin-top: -1px;
+                // @include Respond(md) {
+                //     margin-top: -2px;
+                // }
+            }
+            .content-select {
+                // padding: 1rem 2rem 3rem 1rem;
+                background-color: rgb(238, 238, 238);
+                display: block;
+                .content-list {
+                    display: block;
+                    & > div {
+                        padding: 1rem 3rem;
+                        border-bottom: 1px dotted #ccc;
+                        font-weight: bold;
+
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: space-between;
+                        color: #ccc;
+                        @include Respond(sm) {
+                            padding: 0.5rem;
+                        }
+                        a {
+                            @include Respond(lg) {
+                                font-size: 1rem;
+                                padding: 0.5rem 0.3rem;
+                            }
+                            @include Respond(md) {
+                                font-size: 0.9rem;
+                                padding: 0.2rem 0.2rem;
+                            }
+                            @include Respond(sm) {
+                                font-size: 0.8rem;
+                            }
+                        }
+                        &:hover {
+                            background-color: rgb(241, 241, 241);
+                        }
+                        div:nth-child(1) {
+                            font-size: 1rem;
+                        }
+                        div:nth-child(2) {
+                            font-size: 0.8rem;
+                            @include Respond(md) {
+                                display: none;
+                            }
+                        }
+                        &:nth-child(even) {
+                            background-color: #dbdbdb;
+                        }
+                    }
+                }
+                .content-more {
+                    position: absolute;
+                    right: 3rem;
+                    font-size: 1.2rem;
+                    font-weight: bold;
+                    @include Respond(lg) {
+                        font-size: 1rem;
+                    }
+                    @include Respond(md) {
+                        font-size: 0.9rem;
+                    }
+                    @include Respond(sm) {
+                        font-size: 0.7rem;
+                    }
+                }
+            }
+        }
+    }
+}

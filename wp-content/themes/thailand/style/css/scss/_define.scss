@@ -1,0 +1,28 @@
+$colorMain : #00AFF0;
+$linkNormal: #838383;
+$linkHover: #012d47;
+$colorTitle :#123658;
+$colorText : #7c7c7c;
+$colorLink : #005075;
+$colorHover : #62778a;
+$colorFooter : rgb(97, 96, 96);
+$colorHeaderTitle : rgb(97, 96, 96);
+
+$colorSliderTitle : #a50303;
+$colorSliderSummary : #5e5d5f;
+$menuBg: linear-gradient( 0deg, #ffffff 0%, #ffffff 1%,#ffffff00 2%, #ffffff00 100%);
+$menuBgHover: linear-gradient( 0deg, #dddcdc00 0%, #fff 30%, #ffffff00 100%);
+
+// $menuBg: #00b0f000;
+// $menuBgHover: #00b0f000;
+$menuSubBg: #e4e3e3;
+$menuSubBgHover: #d8d8d8;
+$menuSub2Bg: #dbdbdb;
+$menuSub2BgHover: #c4c2c2;
+
+// Định nghĩa mixin cho kiểu chữ và bóng
+@mixin text-style-with-shadow {
+  color: rgb(97, 96, 96);
+  text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.5);
+}
+

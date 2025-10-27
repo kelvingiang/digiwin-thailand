@@ -70,6 +70,8 @@ class Controller_Web_Setting
             update_option('office_hours', $_POST['txt-office-hours']);
             update_option('first_load', $_POST['txt-first-load']);
             update_option('more_load', $_POST['txt-more-load']);
+               
+            update_post_meta(1, '_about_us', $_POST['txt-about-us']);
         }
         require_once(DIR_VIEW . 'view-setting.php');
     }

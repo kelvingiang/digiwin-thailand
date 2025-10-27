@@ -52,9 +52,10 @@ class Controller_Resource
     public function manage_columns($columns)
     {
         unset($columns['create_date']);
+        unset($columns['home']);
 
         $columns['img'] = __('Image');
-        $columns['web'] = __('Link');
+        $columns['cate'] = __('Category');
         $columns['create_date'] = __('Create Date');
         return $columns;
     }
@@ -64,8 +65,13 @@ class Controller_Resource
     {
         global $post;
         switch ($columns) {
-            case 'web':
-                echo get_post_meta($post->ID, '_meta_box_web', true);
+            case 'cate':
+                $terms = wp_get_post_terms($post->ID, 'resource_category');
+                if (count($terms) > 0) {
+                    foreach ($terms as $key => $term) {
+                        echo '<a href=' . custom_redirect($term->slug) . '&' . $term->taxonomy . '=' . $term->slug . '>' . $term->name . '</a></br>';
+                    }
+                }
                 break;
             case 'img':
                 if (has_post_thumbnail()) {

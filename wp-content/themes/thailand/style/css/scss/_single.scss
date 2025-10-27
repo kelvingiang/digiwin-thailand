@@ -1,0 +1,144 @@
+.single-area {
+    width: 100%;
+
+    padding-top: 100px;
+    .single-title {
+        font-size: 2rem;
+        font-weight: bold;
+        color: $colorTitle;
+        text-align: center;
+        margin: 1rem;
+    }
+  
+    .single-content {
+        margin: 1rem;
+        img {
+            max-width: 90%;
+            padding: 1rem;
+        }
+        .aligncenter {
+            display: block;
+            margin: 0 auto; // ⬅️ 水平置中
+        }
+
+        // ⬇️ 圖片靠左
+        .alignleft {
+            display: block;
+            margin-right: auto;
+            margin-left: 0;
+        }
+
+        // ⬇️ 圖片靠右
+        .alignright {
+            display: block;
+            margin-left: auto;
+            margin-right: 0;
+        }
+    }
+}
+
+.single-more {
+    // padding: 1rem;
+    column-count: 4; /* 分成三欄 */
+    column-gap: 20px; /* 欄距 */
+    padding: 1rem;
+    background-image: linear-gradient(0deg, #fff 0%, #3570b4 50%, #2765ac 100%);
+    @include Respond('sm'){
+        padding: 0.2rem;
+        column-gap: 5px; /* 欄距 */
+        column-count: 2;
+    }
+    .single-more-item {
+        display: inline-block; /* 讓 item 能夠在 column 內自適應 */
+        width: 100%;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border: 1px solid #e6e6e6;
+        border-radius: 5px;
+        position: relative;
+        background-color: #fff;
+        overflow: hidden;
+        transition: all 0.4s ease-in-out;
+        &:hover {
+            transform: translateY(-10px);
+        }
+
+        .item-img {
+            width: 100%;
+        }
+        .item-title {
+            font-weight: bold;
+            padding: 1rem 0.3rem 0rem;
+            font-size: 1.2rem;
+            color: $linkNormal;
+            &:hover {
+                color: $linkHover;
+            }
+        }
+        .item-date {
+            height: 15px;
+            text-align: right;
+            padding-right: 1rem;
+            padding-bottom: 1.5rem;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+        .item-summary {
+            color: $colorText;
+            padding: 0rem 0.5rem 1rem;
+            line-height: 1.5;
+            .more-link {
+                position: absolute;
+                bottom: 5px;
+                right: 5px;
+                color: #ccc;
+                font-size: 0.8rem;
+                font-weight: bold;
+                &:hover {
+                    color: #666;
+                }
+            }
+        }
+    }
+}
+
+.single-head {
+    position: relative;
+
+    .single-head-text {
+        position: absolute;
+        animation: showInUp 3s ease-in-out forwards;
+        h2 {
+            font-size: 2rem;
+            font-weight: bold;
+            color: $colorSliderTitle;
+            margin-bottom: 1rem;
+        }
+        h3 {
+            font-size: 1rem;
+            color: $colorSliderSummary;
+        }
+    }
+
+    img {
+        width: 100%;
+    }
+}
+
+@keyframes showInUp {
+    0% {
+        opacity: 0;
+        top: 100%;
+        left: 10%;
+    }
+    30% {
+        opacity: 0;
+        top: 80%;
+        left: 10%;
+    }
+    100% {
+        opacity: 1;
+        top: 35%;
+        left: 10%;
+    }
+}

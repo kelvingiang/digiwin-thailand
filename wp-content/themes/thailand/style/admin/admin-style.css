@@ -67,20 +67,6 @@
   float: right;
 }
 
-.without-img {
-  width: 300px;
-  background-color: #e7e3e3;
-  padding: 2rem 0rem;
-  text-align: center;
-  font-size: 2rem;
-  font-weight: bold;
-  color: rgba(139, 139, 139, 0.7529411765);
-}
-
-.img-thumb {
-  width: 300px;
-}
-
 .show-home {
   background-color: #195700;
   width: 1rem;

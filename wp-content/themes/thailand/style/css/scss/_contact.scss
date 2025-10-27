@@ -1,0 +1,204 @@
+$contactBG: #f8f8f8;
+$titleColor: #09396e;
+
+.contact-area {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 三欄 */
+    gap: 30px; /* 每個 item 之間的間距 */
+    width: 80%;
+    margin: auto auto;
+    @include Respond(sm) {
+        grid-template-columns: repeat(1, 1fr); /* 三欄 */
+    }
+    @include Respond(md) {
+        gap: 5px;
+    }
+    .item {
+        margin-bottom: 20px;
+        border-radius: 5px;
+        background-image: linear-gradient(0deg, #ffffff6e 10%, #e0e0e098 100%);
+        position: relative;
+        // overflow: hidden;
+        display: inline-block;
+        padding-bottom: 2rem;
+        //========
+        &::after {
+            content: "";
+            position: absolute;
+            top: 60px; /* 與上方保持 20px 間距 */
+            left: 0;
+            right: 0;
+            bottom: 0;
+            opacity: 0.15;
+            background-image: var(--bg);
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: grayscale(100%) brightness(1);
+            z-index: -1;
+        }
+
+        h3 {
+            font-weight: bold;
+            padding: 2rem 0.3rem 0rem;
+            font-family: "Times New Roman", Times, serif;
+            font-size: 1.5rem;
+            color: $titleColor;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        div {
+            margin: auto auto;
+            width: 80%;
+            font-size: 1.2rem;
+
+            &:nth-child(2) {
+                margin-bottom: 1rem;
+            }
+            p {
+                font-size: 1rem;
+                color: #696969;
+                &:nth-child(2) {
+                    margin-top: 0.3rem;
+                }
+            }
+        }
+    }
+}
+
+// contact form ==================================================================================
+// contact form ==================================================================================
+.form-area {
+    .form-contact {
+        margin: auto auto;
+        padding: 1rem 0rem;
+        width: 80%;
+        @include Respond(sm) {
+            width: 100%;
+        }
+        background-color: $contactBG;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 三欄 */
+        gap: 10px;
+        @include Respond(sm) {
+            grid-template-columns: repeat(1, 1fr); /* 三欄 */
+            gap: 5px;
+        }
+        @include Respond(md) {
+            grid-template-columns: repeat(1, 1fr); /* 三欄 */
+            gap: 10px;
+        }
+        .form-row {
+            min-height: 50px;
+            padding: 0rem 2rem;
+            @include Respond(sm) {
+                padding: 0rem;
+            }
+            .form-text {
+                color: $titleColor;
+                font-size: 1.1rem;
+                font-weight: bold;
+                font-family: "Times New Roman", Times, serif;
+                margin-bottom: -2px;
+                margin-left: 10px;
+            }
+            .form-input {
+                position: relative;
+
+                .captcha-area {
+                    display: flex;
+                    flex-direction: row;
+                }
+            }
+        }
+    }
+    .btn-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        background-color: $contactBG;
+        width: 80%;
+        margin: auto auto;
+        padding: 1rem;
+        input {
+            margin-right: 2rem;
+            background-color: #08456e;
+            border-radius: 5px;
+            padding: 0.8rem 1.5rem;
+            border: 0px;
+            color: #fff;
+            opacity: 0.8;
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.my-input {
+    border-radius: 5px !important   ;
+    @include Respond(sm) {
+        width: 95%;
+        margin-left: 0.5rem;
+    }
+}
+.captcha-row {
+    text-align: start;
+    margin: 0rem 1rem;
+}
+
+.check-row {
+    padding-top: 10px;
+    label {
+        font-size: 1rem;
+        @include Respond(sm) {
+            font-size: 0.7rem;
+        }
+    }
+}
+.captcha-input {
+    border: #ccc 1px solid;
+    margin-left: 1rem;
+    &::placeholder {
+        color: #cecece; /* 改變文字顏色 */
+        font-style: italic; /* 改成斜體 */
+        opacity: 1; /* 調整透明度 (某些瀏覽器預設是 0.5) */
+    }
+}
+
+#error-captcha {
+    height: 20px;
+    padding-left: 40%;
+    @include Respond(sm) {
+        padding-left: 55%;
+    }
+}
+
+.error-style {
+    color: rgb(151, 1, 1);
+    font-size: 0.8rem !important;
+    font-style: italic;
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+#form-response{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #e9e9e99a;
+    z-index: 1000000;
+    display: none;
+     /* 2. Căn giữa theo chiều dọc (trục chính) */
+    align-items: center; 
+    /* 3. Căn giữa theo chiều ngang (trục phụ) */
+    justify-content: center;
+    p{
+        font-size: 3rem;
+        font-weight: bold;
+        color: #02558b;
+        text-align: center;
+    }
+}

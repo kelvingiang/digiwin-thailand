@@ -1,0 +1,54 @@
+.post-area {
+    width: 100%;
+    .post-header {
+        position: relative;
+        overflow: hidden;
+        .post-thumbnail {
+            width: 100%;
+        }
+        .post-title {
+            position: absolute;
+            top: 0%;
+            left: 10%;
+            font-size: 2rem;
+            font-weight: bold;
+            opacity: 0;
+            color: $colorSliderTitle;
+        }
+        .post-summary {
+            position: absolute;
+            width: 80%;
+            top: 43%;
+            left: 50%;
+            font-size: 1.2rem;
+            font-weight: bold;
+            opacity: 0;
+            color: $colorSliderSummary;
+        }
+    }
+    .post-content {
+        padding: 0.5rem 1rem;
+        img {
+            max-width: 80%;
+        }
+        .aligncenter {
+            margin: 0 auto;
+            display: block; /* Phải là block hoặc inline-block để margin: auto hoạt động */
+         
+        }
+
+              // ⬇️ 圖片靠左
+        .alignleft {
+            display: block;
+            margin-right: auto;
+            margin-left: 0;
+        }
+
+        // ⬇️ 圖片靠右
+        .alignright {
+            display: block;
+            margin-left: auto;
+            margin-right: 0;
+        }
+    }
+}

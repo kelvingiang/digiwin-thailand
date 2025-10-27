@@ -1,0 +1,48 @@
+// .animation-item {
+//     visibility: hidden;
+// }
+
+// @keyframes slow-show {
+//     0% {
+//         // transform: scale(0.5, 0.5);
+//         transform: translateY(100px);
+//         opacity: 0;
+//     }
+//     100% {
+//         // transform: scale(1, 1);
+//         transform: translateY(0px);
+//         opacity: 1;
+//     }
+// }
+
+// .animation-show {
+//     visibility: visible;
+//     animation-name: slow-show;
+//     animation-duration: 2s;
+//     animation-delay: 0s;
+//     animation-iteration-count: 1;
+//     animation-fill-mode: forwards;
+// }
+
+/* === 1️⃣ 進場動畫（只負責出現） === */
+.animation-item {
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.animation-show {
+  visibility: visible;
+  animation: fadeInUp 2s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

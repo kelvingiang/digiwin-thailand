@@ -1,0 +1,88 @@
+.h2-title {
+    font-size: 3rem;
+    font-weight: bold;
+    font-family: "Times New Roman", Times, serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 0;
+    @include text-style-with-shadow; // Gọi mixin để áp dụng màu và bóng
+}
+.article-list {
+    // column-count: 3; /* 分成三欄 */
+    // column-gap: 20px; /* 欄距 */
+    // margin: 0 1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 三欄 */
+    gap: 20px; /* 每個 item 之間的間距 */
+    margin: 1rem;
+    @include Respond(sm) {
+        grid-template-columns: repeat(1, 1fr); /* 三欄 */
+    }
+    .item {
+        display: inline-block; /* 讓 item 能夠在 column 內自適應 */
+        width: 100%;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        // border: 1px solid #e6e6e6;
+        border-radius: 5px;
+        position: relative;
+        // box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5) ;
+        overflow: hidden;
+        // background-color: #f7f7f7;
+        transition: all 0.5s ease-in-out;
+        @include Respond(sm) {
+            border-bottom: 1px solid #666;
+        }
+        .item-img {
+            width: 100%;
+        }
+        .item-title {
+            font-weight: bold;
+            padding: 1rem 0.3rem 0rem;
+            font-size: 1.2rem;
+            color: $linkNormal;
+            &:hover {
+                color: $linkHover;
+            }
+        }
+        .item-date {
+            height: 15px;
+            text-align: right;
+            padding-right: 1rem;
+            padding-bottom: 1.5rem;
+            font-size: 0.9rem;
+            color: #ccc;
+        }
+        .item-summary {
+            color: $colorText;
+            padding: 0rem 0.5rem 1rem;
+            line-height: 1.5;
+            .more-link {
+                position: absolute;
+                bottom: 5px;
+                right: 5px;
+                color: #ccc;
+                font-size: 0.8rem;
+                font-weight: bold;
+                &:hover {
+                    color: #666;
+                }
+            }
+        }
+    }
+
+    /* === 2️⃣ 滑鼠互動動畫（只負責 hover） === */
+
+    .itemMouseOver {
+        transform: translateY(5px);
+        background-color: #f7f7f7;
+        border: 1px solid #ccc;
+    }
+
+    .itemMouseLeave {
+        border: 1px solid #fff;
+        background-color: #ffffff;
+        transform: translateY(0);
+    }
+}

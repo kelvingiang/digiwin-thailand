@@ -14,7 +14,7 @@ class Meta_Box_Web
         $id = 'admin-metabox-web';
         $title = __('Web Site');
         $callback = array($this, 'display');
-        add_meta_box($id, $title, $callback, array('customerlogo',));
+        add_meta_box($id, $title, $callback, array('customerlogo','slider'));
     }
 
     public function display($post)
@@ -35,8 +35,8 @@ class Meta_Box_Web
 
     public function save($post_id)
     {
-        if (!empty($_POST['txt-web'])) {
+        // if (!empty($_POST['txt-web'])) {
             update_post_meta($post_id, '_meta_box_web', $_POST['txt-web']);
-        }
+        // }
     }
 }

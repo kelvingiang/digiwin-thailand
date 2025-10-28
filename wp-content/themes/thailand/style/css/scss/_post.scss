@@ -14,19 +14,43 @@
             font-weight: bold;
             opacity: 0;
             color: $colorSliderTitle;
+
+            // 👇 關鍵：加入這個屬性
+            animation-fill-mode: forwards;
+            animation-name: slider-title;
+            animation-duration: 2s;
+            animation-delay: 1.5s;
+            @include Respond(sm) {
+                font-size: 1.3rem;
+                left: 30px;
+                 animation-name: slider-title-sm;
+            }
         }
         .post-summary {
             position: absolute;
             width: 80%;
-            top: 43%;
-            left: 50%;
+            top: 40%;
             font-size: 1.2rem;
             font-weight: bold;
             opacity: 0;
             color: $colorSliderSummary;
+            // 👇 關鍵：加入這個屬性
+            animation-fill-mode: forwards;
+            animation-name: slider-content-sm;
+            animation-duration: 2s;
+            animation-delay: 2s;
+            @include Respond(sm) {
+                font-size: 0.8rem;
+                top:42%;
+                width: 90%;
+            }
         }
     }
     .post-content {
+        margin-top: 2%;
+        @include Respond(sm) {
+            margin-top: 20%;
+        }
         padding: 0.5rem 1rem;
         img {
             max-width: 80%;
@@ -34,10 +58,9 @@
         .aligncenter {
             margin: 0 auto;
             display: block; /* Phải là block hoặc inline-block để margin: auto hoạt động */
-         
         }
 
-              // ⬇️ 圖片靠左
+        // ⬇️ 圖片靠左
         .alignleft {
             display: block;
             margin-right: auto;
@@ -52,3 +75,55 @@
         }
     }
 }
+
+@keyframes slider-title {
+    0% {
+        top: 0%;
+        opacity: 0;
+    }
+    100% {
+        top: 30%;
+        opacity: 1;
+    }
+}
+
+@keyframes slider-title-sm {
+    0% {
+        top: 0%;
+        opacity: 0;
+    }
+    100% {
+        top: 30%;
+        opacity: 1;
+    }
+}
+
+@keyframes slider-content {
+    0% {
+        left: 100%;
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        left: 30%;
+        opacity: 1;
+    }
+}
+
+@keyframes slider-content-sm {
+    0% {
+        left: 100%;
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        left: 2%;
+        opacity: 1;
+    }
+}
+
+

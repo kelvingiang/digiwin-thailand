@@ -1,11 +1,12 @@
-<?php get_header(); ?>
-<article id="post-0" class="post not-found">
-<header class="header">
-<h1 class="entry-title" itemprop="name"><?php esc_html_e( 'Not Found', 'blankslate' ); ?></h1>
-</header>
-<div class="entry-content" itemprop="mainContentOfPage">
-<p><?php esc_html_e( 'Nothing found for the requested page. Try a search instead?', 'blankslate' ); ?></p>
-<?php get_search_form(); ?>
+<?php get_header();
+get_template_part('templates/template', 'menu');
+?>
+
+<div id="page-404">
+    <img src="<?php echo PART_IMAGES . '404.png' ?>" />
 </div>
-</article>
-<?php get_footer(); ?>
+
+
+<?php
+get_template_part('templates/template', 'footer');
+get_footer();

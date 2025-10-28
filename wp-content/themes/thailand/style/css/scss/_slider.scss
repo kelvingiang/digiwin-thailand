@@ -1,4 +1,17 @@
-@keyframes owl-slider-title {
+
+
+@keyframes owl-slider-title{
+    0% {
+        top: 0%;
+        opacity: 0;
+    }
+    100% {
+        top: 35%;
+        opacity: 1;
+    }
+}
+
+@keyframes owl-slider-title-sm{
     0% {
         top: 0%;
         opacity: 0;
@@ -23,12 +36,26 @@
     }
 }
 
+@keyframes owl-slider-content-sm {
+    0% {
+        left: 100%;
+        opacity: 0;
+    }
+    70% {
+        opacity: 0;
+    }
+    100% {
+        left: 10%;
+        opacity: 1;
+    }
+}
+
+
 #slider {
     .item {
         .owl-slider-title,
         .owl-slider-content {
             display: none;
-
         }
     }
     .active {
@@ -43,7 +70,7 @@
         @include Respond(sm) {
             font-size: 0.5rem;
         }
-        a{
+        a {
             color: $colorSliderTitle;
         }
         h2 {
@@ -66,6 +93,10 @@
             left: 10%;
             animation-name: owl-slider-title;
             animation-duration: 1s;
+            @include Respond(sm) {
+                animation-name: owl-slider-title-sm;
+                animation-duration: 1s;
+            }
         }
         .owl-slider-content {
             display: block;
@@ -76,6 +107,10 @@
             left: 10%;
             animation-name: owl-slider-content;
             animation-duration: 1s;
+            @include Respond(sm) {
+                animation-name: owl-slider-content-sm;
+                animation-duration: 1s;
+            }
         }
     }
     .owl-dots {

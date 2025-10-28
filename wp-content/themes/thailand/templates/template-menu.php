@@ -70,13 +70,12 @@
     // mobile menu =======================================================
     jQuery(document).ready(function() {
 
-        jQuery("#menu-icon").on('click', function() {
-            if (jQuery('.primary-menu').hasClass('start-menu-mobile')) {
-                jQuery('.primary-menu').addClass('end-menu-mobile');
-                jQuery('.primary-menu').removeClass('start-menu-mobile');
+        jQuery(document).on('click', '#menu-icon', function() {
+            const menu = jQuery('.primary-menu');
+            if (menu.hasClass('start-menu-mobile')) {
+                menu.addClass('end-menu-mobile').removeClass('start-menu-mobile');
             } else {
-                jQuery('.primary-menu').addClass('start-menu-mobile');
-                jQuery('.primary-menu').removeClass('end-menu-mobile');
+                menu.addClass('start-menu-mobile').removeClass('end-menu-mobile');
             }
         });
 

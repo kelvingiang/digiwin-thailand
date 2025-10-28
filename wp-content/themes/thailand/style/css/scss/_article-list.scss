@@ -16,6 +16,7 @@
     grid-template-columns: repeat(3, 1fr); /* 三欄 */
     gap: 20px; /* 每個 item 之間的間距 */
     margin: 1rem;
+    
     @include Respond(sm) {
         grid-template-columns: repeat(1, 1fr); /* 三欄 */
     }

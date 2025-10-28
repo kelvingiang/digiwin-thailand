@@ -117,17 +117,19 @@ $wp_query = new WP_Query($arr);
             my_ajax_object.nonce :
             "";
 
-        $(window).on("scroll", function() {
+         // ==================== chức năng load thêm data khi thanh cuốn xuống còn 30px
+        $(window).on("scroll touchmove", function() {
             if (loading) return;
 
-            if (
-                $(window).scrollTop() + $(window).height() >=
-                $(document).height() - 30
-            ) {
+            const scrollY = window.scrollY || window.pageYOffset;
+            const visibleHeight = window.innerHeight;
+            const totalHeight = document.documentElement.scrollHeight;
+
+            if (scrollY + visibleHeight >= totalHeight - 30) {
                 loading = true;
-                // 🔹 找出目前最後一個 item 的 data-id
+
                 let lastID = $(".article-list .item").last().data("id") || 0;
-                let cate = $(".article-list ").data("cate") || 0;
+                let cate = $(".article-list").data("cate") || 0;
 
                 $.ajax({
                     url: ajaxUrl,
@@ -135,26 +137,27 @@ $wp_query = new WP_Query($arr);
                     data: {
                         action: "load_more_posts",
                         page: page,
-                        offset: lastID, // 把最後一筆 ID 傳給後端
+                        offset: lastID,
                         cate: cate,
                         security: nonce,
                     },
                     success: function(response) {
                         if (response.trim() !== "no-more") {
-                            // $(".article-list").append(response);
-                            onAjaxLoad(response); // 使用動畫載入函式
+                            onAjaxLoad(response);
                             page++;
                             loading = false;
+
+                            // 若手機螢幕太短，自動再載入
+                            if (document.documentElement.scrollHeight <= window.innerHeight + 30) {
+                                $(window).trigger('scroll');
+                            }
                         } else {
-                            // 沒資料時可以選擇解除監聽
-                            $(window).off("scroll");
+                            $(window).off("scroll touchmove");
                         }
                     },
-                    error: function(xhr) {
-                        // console.error('load more error', xhr);
+                    error: function() {
                         loading = false;
-                        console.log(xhr.responseText);
-                    },
+                    }
                 });
             }
         });
